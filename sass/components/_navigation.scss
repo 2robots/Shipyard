@@ -1,0 +1,96 @@
+
+#shipyard-navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: #F2F2F2;
+
+  width: 50px;
+  @include transition-property(width);
+  @include transition-duration(0.2s);
+  @include transition-timing-function(ease-out);
+
+  @include breakpoint($break-small) {
+    width: 300px;
+  }
+
+  ul {
+      overflow: auto;
+      position: absolute;
+      top: 0;
+      right: -5px;
+      bottom: 0;
+      left: 0;
+      list-style: none;
+      margin: 0;
+      padding: 0 5px 0 0;
+
+
+    li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      button {
+        text-align: left;
+
+        color: white;
+        box-sizing: content-box;
+        padding: 0;
+        margin: 0;
+        border: none;
+        position: relative;
+        border-radius: 0;
+        box-shadow: none;
+        outline: none;
+        display: block;
+        width: 100%;
+        white-space: nowrap;
+        font-size: 18px;
+        font-family: 'Open Sans';
+        font-weight: 100;
+        font-style: normal;
+        line-height: 50px;
+        cursor: pointer;
+
+        span.icon {
+          font-size: 26px;
+          line-height: 26px;
+          width: 50px;
+          margin-right: 10px;
+          text-align: center;
+        }
+
+        @include transition-property(all);
+        @include transition-duration(0.2s);
+        @include transition-timing-function(ease-out);
+
+        &.current {
+          padding-right: 5px;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 5px;
+            background: black;
+            opacity: 0.2;
+          }
+        }
+
+        &:hover {
+          opacity: 0.8;
+        }
+
+        .glyphicon {
+          font-size: 20px;
+          width: 50px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}

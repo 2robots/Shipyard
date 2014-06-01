@@ -1,0 +1,16 @@
+{
+  "name":           "shipyard",
+  "version":        "0.1",
+  "main":           "index.html",
+  "ignore":         [
+    "**/.*",
+    "libs"
+  ],
+  "dependencies":   {
+    "angular":              "latest",
+    "angular-route":        "latest",
+    "requirejs":            "latest",
+    "requirejs-domready":   "latest",
+    "jquery":               "latest"
+  }
+}
