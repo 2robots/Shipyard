@@ -9,8 +9,8 @@
   <!-- Site Properities -->
   <title>Shipyard</title>
 
-  <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700" rel="stylesheet" type="text/css">
-  <link href="http://code.ionicframework.com/ionicons/1.4.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css">
 
   <link rel="stylesheet" href="css/shipyard.css">
 
@@ -21,35 +21,55 @@
 </head>
 <body ng-controller="MainCtrl">
 
-  <nav id="shipyard-navigation" ng-show="user.loggedin">
-    <ul>
-      <li ng-repeat="resource in resources">
-        <button ng-class="resource.active ? 'current' : ''" style="background-color:{{resource.color}};" ng-click="navigate('GET', resource)">
-          <span class="icon {{resource.icon}}"></span> {{resource.name}}
-        </button>
-      </li>
-    </ul>
-  </nav>
 
-  <div id="shipyard-content">
-    <button id="shipyard-logout" ng-click="logout" ng-show="user.loggedin" class="btn btn-link">Logoout <span class="ion-power"></span></button>
+  <!-- left slide out menu -->
+  <snap-drawer ng-if="user.loggedin">
+    <nav class="shipyard-nav" ng-cloak>
+      <ul>
+        <li ng-repeat="resource in resources">
+          <button ng-class="resource.active ? 'current' : ''" ng-click="navigate('GET', resource)">
+            <span class="block-icon {{resource.icon}}"></span> {{resource.name}}
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </snap-drawer>
 
-    <div id="shipyard-dashbpard" ng-show="user.loggedin">
-      <h1>Hallo {{user.username}}</h1>
-      <p>Wähle einen Bereich auf der linken Seite aus!</p>
-    </div>
 
-    <div id="shipyard-login" ng-show="!user.loggedin">
-      <h1>Login</h1>
-      <p>Einloggen und loslegen</p>
 
+  <!-- main content area -->
+  <snap-content>
+    <!-- header -->
+    <section class="shipyard-section-header" ng-if="user.loggedin" ng-cloak>
+
+      <div class="float-left">
+        <button snap-toggle class="block-icon ion-navicon" ng-class="snapperOpen ? 'active' : ''" title="Toggle"></button>
+      </div>
+
+      <div class="float-right">
+        <button ng-click="navigate('PUT', 'user', user.id)" class="block-icon ion-ios7-person" title="Logout"></button>
+        <button ng-click="logout()" class="block-icon ion-ios7-minus-outline" title="Logout"></button>
+      </div>
+    </section>
+
+    <!-- main content -->
+    <section class="shipyard-section-main" ng-if="user.loggedin" ng-cloak>
+      <div ng-view ng-cloak></div>
+    </section>
+  </snap-content>
+
+
+
+  <!-- login -->
+  <section class="shipyard-section-login" ng-if="!user.loggedin" ng-cloak>
+
+    <form class="shipyard-login">
+      <h1 class="big"><span class="icon ion-ios7-analytics"></span></h1>
       <input placeholder="Username" ng-model="user.username" type="text" />
       <input placeholder="Passwort" ng-model="user.password" type="password" />
-      <button ng-click="login()">Login</button>
-    </div>
-
-    <div class="container" ng-view></div>
-  </div>
+      <button ng-click="login()" class="icon ion-ios7-checkmark-outline shipyard-animate" ng-if="user.username.length > 0 && user.password.length > 0" title="Login"></button>
+    </form>
+  </section>
 
 </body>
 </html>

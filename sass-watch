@@ -1,0 +1,1 @@
+sass -r sass-globbing --watch --style compressed sass:css

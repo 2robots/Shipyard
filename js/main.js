@@ -8,8 +8,11 @@ require.config({
     paths: {
         'angular':              '../lib/angular/angular',
         'angular-route':        '../lib/angular-route/angular-route',
+        'angular-animate':      '../lib/angular-animate/angular-animate',
+        'angular-snap':         '../lib/angular-snap/angular-snap',
         'domReady':             '../lib/requirejs-domready/domReady',
-        'jquery':               '../lib/jquery/dist/jquery'
+        'jquery':               '../lib/jquery/dist/jquery',
+        'snap':                 '../lib/snapjs/snap'
     },
 
     /**
@@ -22,6 +25,12 @@ require.config({
         },
         'angular-route': {
             deps: ['angular']
+        },
+        'angular-animate': {
+            deps: ['angular']
+        },
+        'angular-snap': {
+            deps: ['angular', 'snap']
         }
     },
 

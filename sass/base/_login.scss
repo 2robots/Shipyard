@@ -1,0 +1,35 @@
+
+/**
+ * Login.
+ * Define styles of the login form.
+ */
+%login {
+  @include outer-container();
+  max-width: 500px;
+  @include responsive-cube(padding-top, 2);
+  text-align: center;
+  color: $white;
+  position: relative;
+
+  input {
+    @include fill-parent();
+    border: none;
+    border-bottom: 1px solid $verydarkblue;
+    @include headline-size(2.5em);
+    color: $white;
+    @include responsive-cube(margin-top);
+
+    @include placeholder {
+      color: $verydarkblue;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: $cube;
+    @include headline-size(2.5em);
+    @include ng-animate($speed-default);
+  }
+}

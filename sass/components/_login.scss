@@ -1,0 +1,12 @@
+
+.shipyard-section-login {
+  background-color: $darkblue;
+  @extend %a-pattern;
+  @include position(absolute, 0 0 0 0);
+  z-index: 10;
+  padding: $cube/2;
+}
+
+.shipyard-login {
+  @extend %login;
+}

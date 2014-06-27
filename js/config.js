@@ -8,26 +8,22 @@ window.Shipyard = {
     {
       id:       "user",
       name:     "User",
-      icon:     "ion-ios7-people-outline",
-      color:    "#4A90E2"
+      icon:     "ion-ios7-people-outline"
 
     }, {
       id:       "areas",
       name:     "Area",
-      icon:     "ion-ios7-location-outline",
-      color:    "#FF6200"
+      icon:     "ion-ios7-location-outline"
 
     }, {
       id:      "issues",
       name:     "Issues",
-      icon:     "ion-ios7-albums-outline",
-      color:    "#7ED321"
+      icon:     "ion-ios7-albums-outline"
 
     }, {
       id:      "media",
       name:     "Media",
-      icon:     "ion-ios7-camera-outline",
-      color:    "#9013FE"
+      icon:     "ion-ios7-camera-outline"
     }
   ]
 };

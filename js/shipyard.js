@@ -5,6 +5,8 @@
 define([
     'angular',
     'angular-route',
+    'angular-animate',
+    'angular-snap',
     'jquery',
     './controllers/index',
     './services/index'
@@ -14,6 +16,8 @@ define([
     return angular.module('shipyard', [
         'shipyard.controllers',
         'shipyard.services',
-        'ngRoute'
+        'ngRoute',
+        'ngAnimate',
+        'snap'
     ]);
 });

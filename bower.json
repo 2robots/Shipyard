@@ -9,8 +9,11 @@
   "dependencies":   {
     "angular":              "latest",
     "angular-route":        "latest",
+    "angular-animate":      "latest",
     "requirejs":            "latest",
     "requirejs-domready":   "latest",
-    "jquery":               "latest"
+    "angular-snap":         "latest",
+    "jquery":               "latest",
+    "reset-css":            "latest"
   }
 }

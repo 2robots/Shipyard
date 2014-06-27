@@ -1,12 +1,36 @@
 define(['./module'], function (controllers) {
     'use strict';
-    controllers.controller('MainCtrl', function ($scope, $rootScope, $location) {
+    controllers.controller('MainCtrl', function ($scope, $rootScope, $location, snapRemote) {
+
+      $rootScope.snapper = null;
+
+      // manage snap.js options
+      snapRemote.getSnapper().then(function(snapper){
+        $rootScope.snapper = snapper;
+        $rootScope.snapper.settings({
+          disable: 'right',
+          dragger: 'none',
+          minPosition: -250,
+          maxPosition: 250
+        });
+
+        $rootScope.snapper.on('open', function(){
+          $rootScope.snapperOpen = true;
+        });
+
+        $rootScope.snapper.on('close', function(){
+          $rootScope.snapperOpen = false;
+        });
+      });
+
+      $rootScope.snapperOpen = false;
 
       $rootScope.resources = window.Shipyard.resources;
       $rootScope.user = {
+        id: -1,
         username: '',
         password: '',
-        loggedin: false
+        loggedin: true
       };
 
       $rootScope.findResource = function(id, cb){
@@ -31,6 +55,10 @@ define(['./module'], function (controllers) {
         $rootScope.user.loggedin = true;
       };
 
+      $rootScope.logout = function() {
+        $rootScope.user.loggedin = false;
+      };
+
       $rootScope.navigate = function(method, resource, id){
 
         if($rootScope.user) {
@@ -53,6 +81,12 @@ define(['./module'], function (controllers) {
             path = path + kid + "/" + id + "/edit";
           }
           $location.path(path);
+
+          // close navigation on navigate
+          if($rootScope.snapper != null) {
+            $rootScope.snapper.close();
+          }
+
         }
       };
 

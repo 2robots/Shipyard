@@ -1,0 +1,18 @@
+
+@mixin ng-animate($speed) {
+
+  &.ng-enter,
+  &.ng-leave {
+    @include transition(all linear $speed);
+  }
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    opacity:0;
+  }
+
+  &.ng-leave,
+  &.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+}

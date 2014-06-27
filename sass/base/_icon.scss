@@ -1,0 +1,26 @@
+
+%icon {
+  border: none;
+  background: none;
+  overflow: hidden;
+  cursor: pointer;
+  padding: 0;
+  font-weight: normal;
+}
+
+%block-icon {
+  @extend %icon;
+
+  width: $cube;
+  height: $cube;
+  text-align: center;
+  line-height: $cube;
+  display: inline-block;
+  font-size: 1.6em;
+  text-align: center;
+  @include transition(all linear $speed-default);
+
+  &:hover, &.active {
+    background: $black;
+  }
+}

@@ -1,0 +1,15 @@
+
+/**
+ * Topbar.
+ * The topbar is the main bar at the very top of the document. Containing all
+ * action buttons.
+ */
+%topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $cube;
+  background: $darkblue;
+  color: $white;
+}

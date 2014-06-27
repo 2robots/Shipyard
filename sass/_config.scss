@@ -1,2 +1,108 @@
 
-$break-small: 1024px;
+/**
+ * All colors for our shipyard theme.
+ */
+$black: #151B25;
+$verydarkblue: #202833;
+$darkblue: #2D3A4C;
+$blue: #2D405B;
+$lightblue: #354F6E;
+$verylightblue: #F5F7F8;
+$white: #FFFFFF;
+
+/**
+ * All layout variables.
+ */
+$cube: 50px;
+
+@mixin responsive-cube($property, $factor: 1) {
+  @include media($break-small) {
+    #{$property}: $cube/3 * $factor;
+  }
+
+  @include media($break-medium) {
+    #{$property}: $cube/2 * $factor;
+  }
+
+  @include media($break-large) {
+    #{$property}: $cube * $factor;
+  }
+}
+
+/**
+ * Breakpounts.
+ */
+$break-small: new-breakpoint(min-width 480px 4);
+$break-medium: new-breakpoint(min-width 800px 12);
+$break-large: new-breakpoint(min-width 1024px 12);
+
+/**
+ * Animation.
+ */
+$speed-default: 0.3s;
+
+/**
+ * Font definitions.
+ */
+$font-family: "Source Sans Pro", sans-serif;;
+$font-size: 1em;
+$font-weight: 200;
+$line-height: 150%;
+
+/**
+ * Headline font-size & styles.
+ */
+$font-size-big: 6em;
+$font-size-h1: 3.5em;
+$font-size-h2: 2em;
+$font-size-h3: 1em;
+$font-size-h4: 1em;
+$font-size-h5: 0.7em;
+$font-size-h6: 0.7em;
+
+$font-size-small: 0.7em;
+$fon-size-bigger: 1.2em;
+
+$line-height-headline: 120%;
+
+@mixin headline-size($size) {
+  @if($size > 1) {
+
+    font-size: $size/4 + 0.75;
+
+    @include media($break-small) {
+      font-size: $size/2 + 0.5;
+    }
+
+    @include media($break-medium) {
+      font-size: $size/1.4 + 0.3;
+    }
+
+    @include media($break-large) {
+      font-size: $size;
+    }
+  } @else {
+    font-size: $size;
+  }
+}
+
+@mixin headline-margin-bottom($size) {
+  @if($size > 1) {
+
+    margin-bottom: $size/4 + 0.75;
+
+    @include media($break-small) {
+      margin-bottom: $size/2 + 0.5;
+    }
+
+    @include media($break-medium) {
+      margin-bottom: $size/1.4 + 0.3;
+    }
+
+    @include media($break-large) {
+      margin-bottom: $size;
+    }
+  } @else {
+    margin-bottom: $size;
+  }
+}
