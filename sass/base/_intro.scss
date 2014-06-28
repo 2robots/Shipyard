@@ -1,0 +1,7 @@
+
+%intro {
+  background-color: $darkblue;
+  @extend %a-pattern;
+  color: $white;
+  padding: $cube 0;
+}

@@ -1,0 +1,67 @@
+
+table {
+  width: 100%;
+  border-top: 1px solid tint($lightblue, 10%);
+  position: relative;
+
+  thead {
+    background: $lightblue;
+    color: $white;
+
+    th {
+      height: $cube;
+      line-height: $cube;
+      text-align: left;
+      padding: 0 $cube/4;
+      cursor: pointer;
+    }
+
+    tr {
+      &.ng-table-filters {
+        @include transform(translateY(-15px));
+      }
+    }
+
+    input {
+      border: none;
+      border-bottom: 1px solid $darkblue;
+      width: 80%;
+    }
+  }
+
+  tbody {
+    tr {
+      &:nth-child(2n) {
+        background: $verylightblue;
+      }
+
+      &:hover {
+        background: $highlightblue;
+      }
+
+      td {
+        height: $cube;
+        line-height: $cube;
+        text-align: left;
+        padding: 0 $cube/4;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.shipyard-table {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  .toggle-filter {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    &:hover {
+      background: none;
+    }
+  }
+}

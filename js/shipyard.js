@@ -7,6 +7,7 @@ define([
     'angular-route',
     'angular-animate',
     'angular-snap',
+    'ng-table',
     'jquery',
     './controllers/index',
     './services/index'
@@ -18,6 +19,7 @@ define([
         'shipyard.services',
         'ngRoute',
         'ngAnimate',
-        'snap'
+        'snap',
+        'ngTable'
     ]);
 });

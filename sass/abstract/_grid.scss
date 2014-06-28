@@ -1,0 +1,18 @@
+
+.container {
+  @include outer-container();
+  text-align: center;
+  padding: 0 $cube/2;
+
+  @include media($break-medium) {
+    text-align: left;
+  }
+
+  @include media($break-large) {
+    text-align: left;
+  }
+}
+
+@for $i from 1 through 12 {
+  .span-#{$i} { @include span-columns($i); }
+}

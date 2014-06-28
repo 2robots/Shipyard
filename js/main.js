@@ -10,6 +10,7 @@ require.config({
         'angular-route':        '../lib/angular-route/angular-route',
         'angular-animate':      '../lib/angular-animate/angular-animate',
         'angular-snap':         '../lib/angular-snap/angular-snap',
+        'ng-table':             '../lib/ng-table/ng-table',
         'domReady':             '../lib/requirejs-domready/domReady',
         'jquery':               '../lib/jquery/dist/jquery',
         'snap':                 '../lib/snapjs/snap'
@@ -31,6 +32,9 @@ require.config({
         },
         'angular-snap': {
             deps: ['angular', 'snap']
+        },
+        'ng-table': {
+            deps: ['angular']
         }
     },
 

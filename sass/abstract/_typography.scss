@@ -6,3 +6,7 @@ h4 { @include headline-size($font-size-h4); }
 h5 { @include headline-size($font-size-h5); }
 h6 { @include headline-size($font-size-h6); }
 h1.big { @include headline-size($font-size-big); }
+
+h1, h2, h3, h4, h5, h6, h1.big {
+  line-height: 100%;
+}
