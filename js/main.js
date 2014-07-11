@@ -13,7 +13,8 @@ require.config({
         'ng-table':             '../lib/ng-table/ng-table',
         'domReady':             '../lib/requirejs-domready/domReady',
         'jquery':               '../lib/jquery/dist/jquery',
-        'snap':                 '../lib/snapjs/snap'
+        'snap':                 '../lib/snapjs/snap',
+        'wysihtml5':            '../lib/wysihtml5/dist/wysihtml5-0.3.0_rc2'
     },
 
     /**
@@ -35,7 +36,8 @@ require.config({
         },
         'ng-table': {
             deps: ['angular']
-        }
+        },
+        'wysihtml5': {}
     },
 
     deps: [

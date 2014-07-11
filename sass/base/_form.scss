@@ -1,0 +1,14 @@
+
+%form {
+  @include outer-container();
+  margin-top: $cube;
+  margin-bottom: $cube;
+
+  input, textarea {
+    width: 100%;
+  }
+
+  %group {
+    margin-bottom: $cube/2;
+  }
+}

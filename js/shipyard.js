@@ -9,6 +9,7 @@ define([
     'angular-snap',
     'ng-table',
     'jquery',
+    'wysihtml5',
     './controllers/index',
     './services/index'
 ], function (angular) {

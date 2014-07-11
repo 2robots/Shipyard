@@ -1,0 +1,8 @@
+
+.shipyard-form {
+  @extend %form;
+
+  .shipyard-form-group {
+    @extend %group;
+  }
+}
