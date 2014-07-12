@@ -1,0 +1,58 @@
+
+%loading {
+
+  position: fixed;
+  top: 100%;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  background: rgba(255,255,255,0.8);
+  @include transition(all $speed-default ease-in-out);
+
+  &.active {
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+
+    span {
+      opacity: 1;
+      top: $cube*5;
+    }
+  }
+
+  span {
+    font-size: $font-size-h2;
+    position: absolute;
+    left: 50%;
+    margin-left: -16px;
+    @include animation(spin $speed-default*3 infinite linear);
+    display: inline-block;
+    font-family: "Ionicons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    opacity: 0;
+    top: 100%;
+    color: $black;
+    @include transition(all $speed-default ease-in-out);
+
+    &:before {
+      content: "\f28e";
+      display: inline-block;
+      font-family: "Ionicons";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      text-rendering: auto;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+    }
+  }
+}

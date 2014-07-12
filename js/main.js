@@ -14,7 +14,8 @@ require.config({
         'domReady':             '../lib/requirejs-domready/domReady',
         'jquery':               '../lib/jquery/dist/jquery',
         'snap':                 '../lib/snapjs/snap',
-        'wysihtml5':            '../lib/wysihtml5/dist/wysihtml5-0.3.0_rc2'
+        'textAngular':          '../lib/textAngular/dist/textAngular.min',
+        'textAngularSanitize':  '../lib/textAngular/dist/textAngular-sanitize.min'
     },
 
     /**
@@ -37,7 +38,12 @@ require.config({
         'ng-table': {
             deps: ['angular']
         },
-        'wysihtml5': {}
+        'textAngular': {
+            deps: ['textAngularSanitize']
+        },
+        'textAngularSanitize': {
+           deps: ['angular']
+        }
     },
 
     deps: [

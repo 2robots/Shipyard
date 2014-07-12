@@ -14,7 +14,11 @@
 }
 
 @for $i from 1 through 12 {
-  .span-#{$i} { @include span-columns($i); }
+  .span-#{$i} { @include span-columns(12); }
+
+  @include media($break-medium) {
+    .span-#{$i} { @include span-columns($i); }
+  }
 }
 
 .omega {

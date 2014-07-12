@@ -1,0 +1,21 @@
+
+.warning {
+  @extend %message;
+  background: tint($yellow, 90%);
+  border-color: $yellow;
+  color: $yellow;
+}
+
+.error {
+  @extend %message;
+  background: tint($red, 90%);
+  border-color: $red;
+  color: $red;
+}
+
+.success {
+  @extend %message;
+  background: tint($green, 90%);
+  border-color: $green;
+  color: $green;
+}

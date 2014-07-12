@@ -8,8 +8,8 @@ define([
     'angular-animate',
     'angular-snap',
     'ng-table',
+    'textAngular',
     'jquery',
-    'wysihtml5',
     './controllers/index',
     './services/index'
 ], function (angular) {
@@ -21,6 +21,7 @@ define([
         'ngRoute',
         'ngAnimate',
         'snap',
-        'ngTable'
+        'ngTable',
+        'textAngular'
     ]);
 });

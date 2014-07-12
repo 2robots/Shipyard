@@ -6,27 +6,38 @@ define(['./module'], function (controllers) {
         $location.path('/dashboard');
       }
 
-      $scope.resource = $routeParams.resource;
-      $scope.id = $routeParams.id;
+      // define context
+      $scope.context = {
+        resource:   $routeParams.resource,
+        id:         $routeParams.id,
+        controller: 'ListCtrl'
+      };
+
       $scope.data = null;
 
-      $rootScope.markResource($scope.resource);
-      $rootScope.findResource($scope.resource, function(resource){
+      $rootScope.markResource($scope.context.resource);
+      $rootScope.findResource($scope.context.resource, function(resource){
         $scope.color = resource.color;
       });
 
+      // add loading
+      $rootScope.loading = true;
+
       var context = {
-        resource:   $scope.resource,
-        id:         $scope.id,
+        resource:   $scope.context.resource,
+        id:         $scope.context.id,
         controller: 'EditCtrl'
       };
 
       $http({
         method: 'GET',
-        url: window.Shipyard.endpoint + '/' + $scope.resource + '/' + $scope.id
+        url: window.Shipyard.endpoint + '/' + $scope.context.resource + '/' + $scope.context.id
       }).
 
       success(function(data, status, headers, config) {
+
+        // remove loading
+        $rootScope.loading = false;
 
         if(angular.isFunction(window.Shipyard.hook_preprocess_data)) {
           window.Shipyard.hook_preprocess_data(data, context, function(mdata){
@@ -40,11 +51,14 @@ define(['./module'], function (controllers) {
 
       error(function(data, status, headers, config) {
         console.log(data);
+
+        // remove loading
+        $rootScope.loading = false;
       });
 
       $scope.save = function(){
         alert("SPEICHERN");
-        $rootScope.navigate('GET', $scope.resource);
+        $rootScope.navigate('GET', $scope.context.resource);
       }
 
     });

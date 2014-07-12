@@ -31,5 +31,9 @@
     width: $cube;
     @include headline-size(2.5em);
     @include ng-animate($speed-default);
+
+    &:hover, &:active {
+      background: none;
+    }
   }
 }

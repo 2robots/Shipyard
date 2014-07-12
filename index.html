@@ -10,8 +10,6 @@
   <title>Shipyard</title>
 
   <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,400,700,200italic,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href="http://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" rel="stylesheet" type="text/css">
-
   <link rel="stylesheet" href="css/shipyard.css">
 
 
@@ -55,6 +53,7 @@
     <!-- main content -->
     <section class="shipyard-section-main" ng-if="user.loggedin" ng-cloak>
       <div ng-view ng-cloak></div>
+      <i class="loading" ng-class="{active:loading}"><span></span></i>
     </section>
   </snap-content>
 

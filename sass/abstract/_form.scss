@@ -1,30 +1,155 @@
 
 fieldset {
-  border: 1px solid $verylightblue;
-
-  legend {
-    display: none;
-  }
+  border: none;
+  margin: 0;
+  padding: 0;
 }
 
-input, button, select {
+input[type="text"], input[type="email"], input[type="number"], button, .form-controls, textarea, text-angular {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-weight;
   box-shadow: none;
   outline: none;
   height: $cube;
-  color: $darkblue;
+  color: $black;
+  padding: $cube/5;
+  border: 1px solid $lightgrey;
+  background: none;
+  font-size: 1.5em;
+  display: block;
 
   @include placeholder {
-    color: $lightblue;
+    color: $lightgrey;
+  }
+
+  &.ng-dirty.ng-invalid {
+    border-color: $lightred;
   }
 }
 
-input {
-  border: 1px solid $lightblue;
-  background: none;
-  font-size: 2em;
+.form-error {
+  background: $lightred;
+  padding: $cube/10 $cube/5;
+  color: $white;
+  font-size: 0.8em;
+  font-weight: normal;
+}
+
+select {
+  font-size: 20px;
+  height: 21px;
+  margin: 2px 0;
+  min-width: 50%;
+}
+
+.form-controls {
+  height: auto;
+  line-height: 100%;
+
+  input[type="checkbox"], input[type="radio"] {
+    margin: 0;
+    font-size: 20px;
+    display: inline-block;
+  }
+
+  label {
+    text-transform: none;
+    font-size: 0.7em;
+    font-weight: normal;
+    color: $black;
+    display: inline-block;
+    margin: 0 $cube/5 0 0;
+    color: $lightgrey;
+  }
+}
+
+textarea, text-angular {
+  resize: vertical;
+  font-size: 1em;
+  font-weight: normal;
+  height: 300px;
+  line-height: 150%;
+}
+
+text-angular {
+  min-height: 300px;
+  height: auto;
+  overflow: auto;
+  padding: 0;
+
+  &.ta-root {
+    &.focussed {
+      .ta-scroll-window.form-control {
+        box-shadow: none;
+        border: none;
+      }
+
+      .ta-bind {
+        outline: none;
+      }
+    }
+  }
+
+  .ta-toolbar, .popover {
+
+    border-bottom: 1px solid $lightgrey;
+
+    .btn-group {
+      display: inline-block;
+      border-right: 1px solid $lightgrey;
+    }
+
+    button {
+      background: none;
+      color: $lightgrey;
+      padding: $cube/5 $cube/4;
+      text-align: center;
+      height: auto;
+      font-weight: normal;
+      font-size: 0.8em;
+      margin: 0;
+
+      &:hover {
+        color: $blue;
+      }
+
+      &:active, &.active {
+        background: $lightblue;
+        color: $white;
+      }
+    }
+  }
+
+  .popover {
+    position: absolute;
+    display: none;
+    box-shadow: 0 0 $cube/4 - $cube/10 $lightgrey;
+    border: none;
+
+    &.in {
+      display: block;
+    }
+
+    .btn-group {
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  .ta-editor {
+    padding: $cube/5;
+    outline: none;
+  }
+}
+
+label, legend {
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 0 $cube/5;
+  display: block;
+  color: $lightblue;
 }
 
 button,
@@ -37,5 +162,33 @@ input[type="button"] {
   text-transform: uppercase;
   font-size: 1em;
   border: none;
+  display: inline-block;
   cursor: pointer;
+  @include transition(background $speed-default/2 ease-in-out);
+
+  &:hover {
+    background: $lightblue;
+  }
+
+  &:active {
+    background: $darkblue;
+  }
+
+  &:disabled {
+    cursor: pointer;
+    background: $grey;
+  }
+
+  &.danger {
+    background: $red;
+
+    &:hover {
+      background: $lightred;
+    }
+
+    &:active {
+      background: $darkred;
+    }
+
+  }
 }

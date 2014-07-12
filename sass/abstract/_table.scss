@@ -14,6 +14,39 @@ table {
       text-align: left;
       padding: 0 $cube/4;
       cursor: pointer;
+      position: relative;
+
+      &.sort-desc, &.sort-asc {
+
+        padding: 0 $cube/4 0 $cube/2;
+
+        &:before {
+          display: inline-block;
+          font-family: "Ionicons";
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          text-rendering: auto;
+          line-height: 1;
+          -webkit-font-smoothing: antialiased;
+          content: "\f27e";
+          position: absolute;
+          right: auto;
+          left: $cube/4;
+          top: 0;
+          bottom: 0;
+          line-height: $cube;
+          font-size: $fon-size-bigger;
+        }
+      }
+
+      &.sort-asc {
+        &:before {
+          content: "\f281";
+        }
+      }
     }
 
     tr {
@@ -45,6 +78,7 @@ table {
         text-align: left;
         padding: 0 $cube/4;
         cursor: pointer;
+        font-weight: normal;
       }
     }
   }

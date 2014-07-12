@@ -26,6 +26,9 @@ define(['./module'], function (controllers) {
     $scope.showFilter = false;
     $scope.data = [];
 
+    // add loading
+    $rootScope.loading = true;
+
     // load data
     $http({
       method: 'GET',
@@ -44,6 +47,9 @@ define(['./module'], function (controllers) {
 
           // reload table
           $scope.tableParams.reload();
+
+          // remove loading
+          $rootScope.loading = false;
         });
       } else {
 
@@ -52,6 +58,9 @@ define(['./module'], function (controllers) {
 
         // reload table
         $scope.tableParams.reload();
+
+        // remove loading
+        $rootScope.loading = false;
       }
 
     }).
@@ -59,6 +68,9 @@ define(['./module'], function (controllers) {
     // on error
     error(function(data, status, headers, config) {
       console.log(data);
+
+      // remove loading
+      $rootScope.loading = false;
     });
 
 
