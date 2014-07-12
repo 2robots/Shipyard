@@ -55,7 +55,7 @@ table {
       }
     }
 
-    input {
+    input[type="text"] {
       border: none;
       border-bottom: 1px solid $darkblue;
       width: 80%;

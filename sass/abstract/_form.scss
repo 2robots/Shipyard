@@ -5,7 +5,11 @@ fieldset {
   padding: 0;
 }
 
-input[type="text"], input[type="email"], input[type="number"], button, .form-controls, textarea, text-angular {
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"],
+button, .form-controls, textarea, text-angular {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-weight;

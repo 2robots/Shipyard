@@ -14,6 +14,8 @@ define(['./module'], function (controllers) {
       };
 
       $scope.data = null;
+      $scope.error = null;
+      $scope.success = null;
 
       $rootScope.markResource($scope.context.resource);
       $rootScope.findResource($scope.context.resource, function(resource){
@@ -57,8 +59,41 @@ define(['./module'], function (controllers) {
       });
 
       $scope.save = function(){
-        alert("SPEICHERN");
-        $rootScope.navigate('GET', $scope.context.resource);
+
+        // add loading
+        $rootScope.loading = true;
+        $scope.error = null;
+        $scope.success = null;
+
+        // try to save content to server
+        $http({
+          method: 'PUT',
+          url: window.Shipyard.endpoint + '/' + $scope.context.resource + '/' + $scope.context.id,
+          data: $scope.data
+        }).
+
+        success(function(data, status, headers, config) {
+
+          // remove loading
+          $rootScope.loading = false;
+
+          // set success-message
+          $scope.success = true;
+
+          setTimeout(function(){
+            $rootScope.navigate('GET', $scope.context.resource);
+          }, 3000);
+        }).
+
+        error(function(data, status, headers, config) {
+          console.log(data);
+
+          // remove loading
+          $rootScope.loading = false;
+
+          // set error-message
+          $scope.error = data.detail;
+        });
       }
 
     });
