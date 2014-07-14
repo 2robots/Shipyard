@@ -10,8 +10,8 @@ define([
     'ng-table',
     'textAngular',
     'jquery',
-    './controllers/index',
-    './services/index'
+    'src/controllers/index',
+    'src/services/index'
 ], function (angular) {
     'use strict';
 

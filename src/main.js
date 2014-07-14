@@ -5,17 +5,19 @@
  */
 require.config({
 
+    baseUrl: '../',
+
     paths: {
-        'angular':              '../lib/angular/angular',
-        'angular-route':        '../lib/angular-route/angular-route',
-        'angular-animate':      '../lib/angular-animate/angular-animate',
-        'angular-snap':         '../lib/angular-snap/angular-snap',
-        'ng-table':             '../lib/ng-table/ng-table',
-        'domReady':             '../lib/requirejs-domready/domReady',
-        'jquery':               '../lib/jquery/dist/jquery',
-        'snap':                 '../lib/snapjs/snap',
-        'textAngular':          '../lib/textAngular/dist/textAngular.min',
-        'textAngularSanitize':  '../lib/textAngular/dist/textAngular-sanitize.min'
+      'angular':              'lib/angular/angular',
+      'angular-route':        'lib/angular-route/angular-route',
+      'angular-animate':      'lib/angular-animate/angular-animate',
+      'angular-snap':         'lib/angular-snap/angular-snap',
+      'ng-table':             'lib/ng-table/ng-table',
+      'domReady':             'lib/requirejs-domready/domReady',
+      'jquery':               'lib/jquery/dist/jquery',
+      'snap':                 'lib/snapjs/snap',
+      'textAngular':          'lib/textAngular/dist/textAngular.min',
+      'textAngularSanitize':  'lib/textAngular/dist/textAngular-sanitize.min'
     },
 
     /**
@@ -48,6 +50,6 @@ require.config({
 
     deps: [
         // kick start application... see bootstrap.js
-        './bootstrapShipyard'
+        'src/bootstrapShipyard'
     ]
 });

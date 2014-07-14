@@ -5,8 +5,8 @@
 define([
     'require',
     'angular',
-    'shipyard',
-    'routes'
+    'src/shipyard',
+    'src/routes'
 ], function (require, ng) {
     'use strict';
 
