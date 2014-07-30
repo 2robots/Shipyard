@@ -24,3 +24,10 @@
     background: $black;
   }
 }
+
+%block-icon-small {
+  @extend %icon;
+  width: $cube * (4/5);
+  height: $cube * (4/5);
+  line-height: $cube * (4/5);
+}

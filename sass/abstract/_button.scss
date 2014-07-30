@@ -1,0 +1,69 @@
+
+button,
+.button,
+input[type="submit"],
+input[type="button"] {
+
+  &.small {
+    font-size: $font-size-small;
+    line-height: $font-size-small;
+    font-weight: normal;
+  }
+
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: $font-size;
+  box-shadow: none;
+  background: none;
+  outline: none;
+  border: 1px solid $blue;
+  color: $blue;
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  @include transition(background $speed-default/2 ease-in-out);
+  height: auto;
+  padding: $cube/8 $cube/8;
+
+  &:hover {
+    background: $blue;
+    color: $white;
+  }
+
+  &:active {
+    background: $darkblue;
+    color: $white;
+  }
+
+  &:disabled {
+    cursor: default;
+    border-color: $grey;
+  }
+
+  &.danger, &.delete {
+    border-color: $red;
+    color: $red;
+    &:hover { background: $red; color: $white; }
+    &:active { background: $darkred; color: $white; }
+  }
+
+  &.add, &.success {
+    border-color: $green;
+    color: $green;
+    &:hover { background: $green; color: $white; }
+    &:active { background: $darkgreen; color: $white; }
+  }
+}
+
+
+
+h1, h2, h3, h4, h5, h6, h1.big {
+  button,
+  .button,
+  input[type="submit"],
+  input[type="button"] {
+    font-size: 16px;
+  }
+}
+

@@ -17,6 +17,7 @@
     "reset-css":            "latest",
     "textAngular":          "latest",
     "font-awesome":         "latest",
-    "ionicons":             "latest"
+    "ionicons":             "latest",
+    "ng-table":             "latest"
   }
 }

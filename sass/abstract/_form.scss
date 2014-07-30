@@ -9,22 +9,21 @@ input[type="text"],
 input[type="email"],
 input[type="number"],
 input[type="password"],
-button, .form-controls, textarea, text-angular {
+textarea, text-angular {
   font-family: $font-family;
   font-size: $font-size;
   font-weight: $font-weight;
   box-shadow: none;
   outline: none;
-  height: $cube;
   color: $black;
-  padding: $cube/5;
+  line-height: 100%;
   border: 1px solid $lightgrey;
   background: none;
   font-size: 1.5em;
   display: block;
 
   @include placeholder {
-    color: $lightgrey;
+    color: $grey;
   }
 
   &.ng-dirty.ng-invalid {
@@ -41,10 +40,7 @@ button, .form-controls, textarea, text-angular {
 }
 
 select {
-  font-size: 20px;
-  height: 21px;
-  margin: 2px 0;
-  min-width: 50%;
+  min-width: 25%;
 }
 
 .form-controls {
@@ -154,45 +150,4 @@ label, legend {
   padding: 0 $cube/5;
   display: block;
   color: $lightblue;
-}
-
-button,
-.button,
-input[type="submit"],
-input[type="button"] {
-  padding: 0 $cube/2;
-  background: $blue;
-  color: $white;
-  text-transform: uppercase;
-  font-size: 1em;
-  border: none;
-  display: inline-block;
-  cursor: pointer;
-  @include transition(background $speed-default/2 ease-in-out);
-
-  &:hover {
-    background: $lightblue;
-  }
-
-  &:active {
-    background: $darkblue;
-  }
-
-  &:disabled {
-    cursor: pointer;
-    background: $grey;
-  }
-
-  &.danger {
-    background: $red;
-
-    &:hover {
-      background: $lightred;
-    }
-
-    &:active {
-      background: $darkred;
-    }
-
-  }
 }

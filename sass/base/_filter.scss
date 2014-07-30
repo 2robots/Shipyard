@@ -1,0 +1,6 @@
+
+%filter {
+  position: relative;
+  padding-bottom: $cube/3;
+  @extend %container;
+}

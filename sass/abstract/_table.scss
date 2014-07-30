@@ -9,12 +9,13 @@ table {
     color: $white;
 
     th {
-      height: $cube;
-      line-height: $cube;
+      height: $cube * (4/5);
+      line-height: $cube * (4/5);
       text-align: left;
       padding: 0 $cube/4;
       cursor: pointer;
       position: relative;
+      font-weight: normal;
 
       &.sort-desc, &.sort-asc {
 
@@ -31,20 +32,20 @@ table {
           text-rendering: auto;
           line-height: 1;
           -webkit-font-smoothing: antialiased;
-          content: "\f27e";
+          content: "\f281";
           position: absolute;
           right: auto;
           left: $cube/4;
           top: 0;
           bottom: 0;
-          line-height: $cube;
+          line-height: $cube * (4/5);
           font-size: $fon-size-bigger;
         }
       }
 
       &.sort-asc {
         &:before {
-          content: "\f281";
+          content: "\f27e";
         }
       }
     }
@@ -64,6 +65,7 @@ table {
 
   tbody {
     tr {
+
       &:nth-child(2n) {
         background: $verylightblue;
       }
@@ -73,12 +75,14 @@ table {
       }
 
       td {
-        height: $cube;
-        line-height: $cube;
+        line-height: $line-height;
         text-align: left;
-        padding: 0 $cube/4;
+        padding: $cube/5 $cube/4;
         cursor: pointer;
         font-weight: normal;
+        font-size: 0.9em;
+        color: $darkgrey;
+        position: relative;
       }
     }
   }
@@ -88,6 +92,8 @@ table {
   position: relative;
   overflow: hidden;
   width: 100%;
+  padding-bottom: $cube;
+  @extend %container;
 
   .toggle-filter {
     position: absolute;

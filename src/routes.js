@@ -5,7 +5,7 @@
 
 define(['src/shipyard'], function (app) {
     'use strict';
-    return app.config(['$routeProvider', function ($routeProvider) {
+    return app.config(['$routeProvider', 'templates', function ($routeProvider, templates) {
 
         $routeProvider.
 
@@ -19,21 +19,21 @@ define(['src/shipyard'], function (app) {
         when('/manage/:resource', {
             controller: 'ListCtrl',
             templateUrl: function(routeParams) {
-                return window.Shipyard.templates + "/GET_" + routeParams.resource + ".tpl";
+                return templates + "/GET_" + routeParams.resource + ".tpl";
             }
         }).
 
         when('/manage/:resource/create', {
             controller: 'CreateCtrl',
             templateUrl: function(routeParams) {
-                return window.Shipyard.templates + "/POST_" + routeParams.resource + ".tpl";
+                return templates + "/POST_" + routeParams.resource + ".tpl";
             }
         }).
 
         when('/manage/:resource/:id/edit', {
             controller: 'EditCtrl',
             templateUrl: function(routeParams) {
-                return window.Shipyard.templates + "/PUT_" + routeParams.resource + ".tpl";
+                return templates + "/PUT_" + routeParams.resource + ".tpl";
             }
         }).
 

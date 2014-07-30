@@ -1,13 +1,16 @@
 
 .shipyard-nav {
+  margin-top: $cube/5;
   width: 250px;
 
   button {
     background: none;
     width: 100%;
-    padding: 0;
+    padding: 0 $cube/5;
     text-align: left;
     line-height: $cube;
+    color: $white;
+    border: none;
 
     &.current, &.current:hover {
       background: $blue;

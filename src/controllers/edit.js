@@ -1,14 +1,10 @@
 define(['./module'], function (controllers) {
     'use strict';
-    controllers.controller('EditCtrl', function ($scope, $rootScope, $location, $http, $routeParams) {
-
-      if(!$rootScope.user) {
-        $location.path('/dashboard');
-      }
+    controllers.controller('EditCtrl', function ($scope, $rootScope, $location, $http, $routeParams, endpoint) {
 
       // define context
       $scope.context = {
-        resource:   $routeParams.resource,
+        resource:     $routeParams.resource,
         id:         $routeParams.id,
         controller: 'ListCtrl'
       };
@@ -17,10 +13,7 @@ define(['./module'], function (controllers) {
       $scope.error = null;
       $scope.success = null;
 
-      $rootScope.markResource($scope.context.resource);
-      $rootScope.findResource($scope.context.resource, function(resource){
-        $scope.color = resource.color;
-      });
+      $rootScope.entity.setCurrent($scope.context.resource);
 
       // add loading
       $rootScope.loading = true;
@@ -33,7 +26,7 @@ define(['./module'], function (controllers) {
 
       $http({
         method: 'GET',
-        url: window.Shipyard.endpoint + '/' + $scope.context.resource + '/' + $scope.context.id
+        url: endpoint + '/' + $scope.context.resource + '/' + $scope.context.id
       }).
 
       success(function(data, status, headers, config) {
@@ -41,13 +34,7 @@ define(['./module'], function (controllers) {
         // remove loading
         $rootScope.loading = false;
 
-        if(angular.isFunction(window.Shipyard.hook_preprocess_data)) {
-          window.Shipyard.hook_preprocess_data(data, context, function(mdata){
-            $scope.data = mdata;
-          });
-        } else {
-          $scope.data = data;
-        }
+        $scope.data = data;
 
       }).
 

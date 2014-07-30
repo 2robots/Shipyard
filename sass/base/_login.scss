@@ -11,6 +11,10 @@
   color: $white;
   position: relative;
 
+  h1, h2, h3, h4, h5, h6, h1.big {
+    color: $white;
+  }
+
   input {
     @include fill-parent();
     border: none;
@@ -27,10 +31,21 @@
   button {
     position: absolute;
     right: 0;
-    bottom: 0;
+    bottom: -6px;
     width: $cube;
+    height: $cube;
+    line-height: $cube;
+    color: $white;
     @include headline-size(2.5em);
     @include ng-animate($speed-default);
+
+    @include media($break-small) {
+      bottom: 0;
+    }
+
+    @include media($break-large) {
+      bottom: 7px;
+    }
 
     &:hover, &:active {
       background: none;

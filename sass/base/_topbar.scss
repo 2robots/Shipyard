@@ -9,4 +9,29 @@
   height: $cube;
   background: $verydarkblue;
   color: $white;
+  text-align: center;
+  position: relative;
+
+  h1, h2, h3, h4, h5, h6 {
+    @include headline-size($font-size-h5); font-weight: normal;
+    margin: 0;
+    padding: 0;
+    color: $white;
+    line-height: $cube;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+  }
+
+  button {
+    color: $white;
+  }
+
+  .float-left, .float-right {
+    position: relative;
+    z-index: 10;
+  }
 }

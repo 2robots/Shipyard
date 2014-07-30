@@ -1,4 +1,6 @@
 
+@import url(http://fonts.googleapis.com/css?family=Fira+Sans:300,400,500,700,300italic,400italic,500italic,700italic);
+
 /**
  * All colors for our shipyard theme.
  */
@@ -11,20 +13,29 @@ $highlightblue: #DCECFF;
 $verylightblue: #F5F7F8;
 $white: #FFFFFF;
 
-$yellow: #B68641;
-$green: #609437;
+$red: #9E1F1F;
+$lightred: #C13131;
+$darkred: #731616;
 
-$red: #743131;
-$lightred: #884141;
-$darkred: #542424;
+$green: #4F9E1F;
+$lightgreen: #80C131;
+$darkgreen: #367316;
 
-$lightgrey: #999999;
-$grey: #666666;
+$yellow: #EBD500;
+$lightyellow: #EEEA2F;
+$darkyellow: #C39A0E;
+
+$verylightgrey: #F7F7F7;
+$lightgrey: #E3E3E3;
+$notsolightgrey: #D4D4D4;
+$grey: #AFAFAF;
 $darkgrey: #444444;
 
 /**
  * All layout variables.
  */
+
+$max-width: em(1600);
 $cube: 50px;
 
 @mixin responsive-cube($property, $factor: 1) {
@@ -56,7 +67,7 @@ $speed-default: 0.3s;
 /**
  * Font definitions.
  */
-$font-family: "Source Sans Pro", sans-serif;
+$font-family: "Fira Sans", sans-serif;
 $font-size: 1em;
 $font-weight: 200;
 $line-height: 150%;
@@ -67,10 +78,10 @@ $line-height: 150%;
 $font-size-big: 6em;
 $font-size-h1: 3.5em;
 $font-size-h2: 2em;
-$font-size-h3: 1em;
-$font-size-h4: 1em;
-$font-size-h5: 0.7em;
-$font-size-h6: 0.7em;
+$font-size-h3: 1.5em;
+$font-size-h4: 1.3em;
+$font-size-h5: 1.1em;
+$font-size-h6: 1em;
 
 $font-size-small: 0.7em;
 $fon-size-bigger: 1.2em;

@@ -9,7 +9,7 @@ define(['src/controllers/main'], function(shipyard){
 
     // test if Angular is avaiable
     it('angular should exist', function(){
-        expect(angular).toBeDefined();
+      expect(angular).toBeDefined();
     });
   });
 });

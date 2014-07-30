@@ -1,4 +1,8 @@
 
 .shipyard-intro {
   @extend %intro;
+
+  .shipyard-intro-actions {
+    @extend %actions;
+  }
 }
