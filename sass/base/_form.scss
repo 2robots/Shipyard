@@ -17,6 +17,8 @@
   position: relative;
   border: 1px solid $lightgrey;
   line-height: $cube * (4/5);
+  overflow: hidden;
+  text-align: left;
 
   label {
     float: left;

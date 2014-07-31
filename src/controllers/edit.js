@@ -16,7 +16,7 @@ define(['./module'], function (controllers) {
       $rootScope.entity.setCurrent($scope.context.resource);
 
       // add loading
-      $rootScope.loading = true;
+      $scope.loading = true;
 
       var context = {
         resource:   $scope.context.resource,
@@ -32,7 +32,7 @@ define(['./module'], function (controllers) {
       success(function(data, status, headers, config) {
 
         // remove loading
-        $rootScope.loading = false;
+        $scope.loading = false;
 
         $scope.data = data;
 
@@ -42,7 +42,7 @@ define(['./module'], function (controllers) {
         console.log(data);
 
         // remove loading
-        $rootScope.loading = false;
+        $scope.loading = false;
       });
 
       $scope.save = function(){

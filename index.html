@@ -35,7 +35,7 @@
   <!-- main content area -->
   <snap-content>
     <!-- header -->
-    <section class="shipyard-section-header" ng-if="auth.loggedin()" ng-cloak>
+    <section class="shipyard-section-header" ng-if="auth.loggedin()">
 
       <h1>Shipyard</h1>
 
@@ -51,23 +51,22 @@
 
 
     <!-- notifications -->
-    <section class="shipyard-section-notifications" ng-cloak>
+    <section class="shipyard-section-notifications">
       <p ng-class="notification.level" ng-repeat="notification in notify.notifications">
         <span>{{notification.message}} <button class="block-icon ion-close" ng-click="notify.dismiss($index)"></button></span>
       </p>
     </section>
 
     <!-- main content -->
-    <section class="shipyard-section-main" ng-if="auth.loggedin()" ng-cloak>
+    <section class="shipyard-section-main" ng-if="auth.loggedin()">
       <div ng-view ng-cloak></div>
-      <i class="loading" ng-class="{active:loading}"><span></span></i>
     </section>
   </snap-content>
 
 
 
   <!-- login -->
-  <section class="shipyard-section-login" ng-if="!auth.loggedin()" ng-cloak>
+  <section class="shipyard-section-login" ng-if="!auth.loggedin()">
 
     <form class="shipyard-login">
       <h1 class="big"><span class="icon ion-power"></span></h1>

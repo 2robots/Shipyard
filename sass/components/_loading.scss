@@ -1,4 +1,9 @@
 
+.shipyard-loading-area {
+  position: relative;
+}
+
 .loading {
   @extend %loading;
 }
+

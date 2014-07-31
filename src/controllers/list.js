@@ -9,6 +9,8 @@ define(['./module'], function (controllers) {
       controller: 'ListCtrl'
     };
 
+    $scope.loading = true;
+
 
     // set this entity active
     $rootScope.entity.setCurrent($scope.context.resource);
@@ -37,7 +39,7 @@ define(['./module'], function (controllers) {
       $scope.tableParams.reload();
 
       // remove loading
-      $rootScope.loading = false;
+      $scope.loading = false;
     }).
 
     // on error
@@ -45,7 +47,7 @@ define(['./module'], function (controllers) {
       console.log(data);
 
       // remove loading
-      $rootScope.loading = false;
+      $scope.loading = false;
     });
 
     // load data into ng-table
