@@ -49,6 +49,14 @@
       </div>
     </section>
 
+
+    <!-- notifications -->
+    <section class="shipyard-section-notifications" ng-cloak>
+      <p ng-class="notification.level" ng-repeat="notification in notify.notifications">
+        <span>{{notification.message}} <button class="block-icon ion-close" ng-click="notify.dismiss($index)"></button></span>
+      </p>
+    </section>
+
     <!-- main content -->
     <section class="shipyard-section-main" ng-if="auth.loggedin()" ng-cloak>
       <div ng-view ng-cloak></div>

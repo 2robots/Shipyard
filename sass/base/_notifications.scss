@@ -1,0 +1,43 @@
+
+%notifications {
+
+  p {
+    @include outer-container();
+    padding: 0 $cube/2;
+    position: relative;
+    margin: 0;
+    max-width: none;
+
+    span {
+      width: 100%;
+      line-height: $cube * (4/5);
+      color: $white;
+      font-size: $font-size-h6;
+      font-weight: normal;
+    }
+
+    &.info { background: $yellow; border-bottom: 1px solid $darkyellow; }
+    &.success { background: $lightgreen; border-bottom: 1px solid $green; }
+    &.error { background: $lightred; border-bottom: 1px solid $red; }
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    button {
+      font-size: 1em;
+      height: $cube * (4/5);
+      width: $cube * (4/5);
+      line-height: $cube * (4/5);
+      position: absolute;
+      right: 0;
+      background: none;
+      color: $white;
+
+      &:hover, &:active {
+        color: $black;
+        background: none;
+      }
+    }
+  }
+}

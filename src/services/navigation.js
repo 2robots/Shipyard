@@ -62,6 +62,9 @@ define(['./module'], function (services) {
 
             // close menu on navigate
             $rootScope.$broadcast('Shipyard.menu.close');
+
+            // clear notifications on navigation
+            $rootScope.$broadcast('Shipyard.notify.clear');
           }
         };
 

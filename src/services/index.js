@@ -8,5 +8,7 @@ define([
   './entity',
   './authentication',
   './menu',
-  './navigation'
+  './navigation',
+  './notify',
+  './L'
 ], function () {});

@@ -1,6 +1,12 @@
 
 .snap-content {
+  overflow: hidden;
   background: $verylightgrey;
+
+  .shipyard-section-main {
+    height: 100%;
+    overflow: auto;
+  }
 }
 .snap-drawer {
   background: $black;

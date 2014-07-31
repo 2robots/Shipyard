@@ -2,7 +2,6 @@ define(['./module'], function (controllers) {
   'use strict';
   controllers.controller('ListCtrl', function ($scope, $rootScope, $location, $filter, $http, $routeParams, ngTableParams, $q, endpoint, hook_get_data) {
 
-
     // define context
     $scope.context = {
       resource:   $routeParams.resource,

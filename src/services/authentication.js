@@ -2,7 +2,7 @@ define(['./module'], function (services) {
   'use strict';
 
   services.value('AuthenticationService')
-    .factory('AuthenticationService', function(hook_login, hook_logout){
+    .factory('AuthenticationService', function(hook_login, hook_logout, $rootScope, L){
       return function(){
 
         /**
@@ -38,6 +38,8 @@ define(['./module'], function (services) {
                 t.saveToken(token);
               }
             });
+
+            $rootScope.$broadcast('Shipyard.notify.addSuccess', { message: L('login_success') });
           },
 
           logout: function() {
@@ -47,6 +49,8 @@ define(['./module'], function (services) {
             hook_logout(function(success){
               t.deleteToken();
             });
+
+            $rootScope.$broadcast('Shipyard.notify.addInfo', { message: L('logout_success') });
           },
 
           loggedin: function() {
@@ -66,7 +70,7 @@ define(['./module'], function (services) {
             this.token = false;
             localStorage.removeItem("Shipyard.token");
             localStorage.removeItem("Shipyard.token_expire");
-          },
+          }
         };
 
         // return new instance.

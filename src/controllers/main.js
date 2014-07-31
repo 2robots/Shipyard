@@ -1,7 +1,7 @@
 define(['./module'], function (controllers) {
     'use strict';
     controllers.controller('MainCtrl', function ($scope, $rootScope,
-      MenuService, NavigationService, AuthenticationService, EntityService) {
+      MenuService, NavigationService, AuthenticationService, EntityService, NotifyService) {
 
       /**
        * Init side menu and snapper.
@@ -23,5 +23,9 @@ define(['./module'], function (controllers) {
        */
       $rootScope.entity = EntityService();
 
+      /**
+       * Init the Notification Manager.
+       */
+      $rootScope.notify = NotifyService();
     });
 });

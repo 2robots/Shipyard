@@ -39,6 +39,14 @@ define(['src/shipyard'], function (shipyard) {
   ]);
 
   /**
+   * Define Strings
+   */
+  shipyard.constant('messages', {
+    login_success: 'Du hast dich erfolgreich angemeldet.',
+    login_error: 'Du hast dich erfolgreich abgemeldet.'
+  });
+
+  /**
    * You can define hooks, to change the way, shipyard is communicatiing with
    * your API.
    */
