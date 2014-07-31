@@ -6,3 +6,12 @@
 .shipyard-field-group {
   @extend %field-group;
 }
+
+.shipyard-fieldset {
+  @extend %panel;
+  @extend %shipyard-fieldset;
+}
+
+.shipyard-fieldset-group {
+  @extend %shipyard-fieldset-group;
+}

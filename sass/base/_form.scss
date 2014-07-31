@@ -23,11 +23,16 @@
     height: $cube * (4/5);
     line-height: $cube * (4/5);
     color: $grey;
+    padding-left: $cube / 5;
   }
 
   input, select {
     margin: 0;
     padding: 0;
+  }
+
+  select {
+    margin-left: $cube/5;
   }
 
   input {
@@ -40,5 +45,85 @@
     line-height: $cube * (4/5);
     font-size: $font-size;
     border: none;
+  }
+}
+
+%shipyard-fieldset-group {
+  @extend %field-group;
+  height: auto;
+  padding: $cube/5;
+
+  legend {
+    display: block;
+    position: static;
+    float: left;
+    color: $grey;
+    line-height: $cube / 2;
+    text-transform: uppercase;
+    font-size: $font-size-h6;
+    font-weight: normal;
+  }
+
+  .fields {
+    float: left;
+    margin-left: $cube/3;
+    line-height: $cube / 2;
+
+    input {
+      position: static;
+      width: auto;
+      margin-right: 5px;
+      line-height: $cube / 2;
+    }
+
+    label {
+      float: none;
+      color: $darkgrey;
+      padding: 0;
+      height: auto;
+      display: inline-block;
+      line-height: $cube / 2;
+    }
+  }
+}
+
+%shipyard-fieldset {
+  padding: $cube/2;
+  position: relative;
+  @include responsive-cube(margin-bottom, 0.5);
+
+  > legend {
+    display: none;
+  }
+
+  &.with-legend {
+    padding-top: $cube * (6/5);
+
+    > legend {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      @include headline-size($font-size-h6);
+      font-weight: normal;
+      height: $cube * (4/5);
+      line-height: $cube * (4/5);
+      padding: 0 $cube/2;
+      color: $blue;
+      border-bottom: 1px solid $lightgrey;
+    }
+  }
+
+  %field-group {
+    margin-bottom: $cube/4;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  footer {
+    margin-top: $cube/2;
   }
 }

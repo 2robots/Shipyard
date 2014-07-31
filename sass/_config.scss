@@ -39,6 +39,9 @@ $max-width: em(1600);
 $cube: 50px;
 
 @mixin responsive-cube($property, $factor: 1) {
+
+  #{$property}: $cube/5 * $factor;
+
   @include media($break-small) {
     #{$property}: $cube/3 * $factor;
   }
@@ -81,7 +84,7 @@ $font-size-h2: 2em;
 $font-size-h3: 1.5em;
 $font-size-h4: 1.3em;
 $font-size-h5: 1.1em;
-$font-size-h6: 1em;
+$font-size-h6: 0.8em;
 
 $font-size-small: 0.7em;
 $fon-size-bigger: 1.2em;

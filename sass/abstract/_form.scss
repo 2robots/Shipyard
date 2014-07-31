@@ -64,12 +64,16 @@ select {
   }
 }
 
-textarea, text-angular {
+textarea, text-angular .ta-scroll-window > .ta-bind {
   resize: vertical;
-  font-size: 1em;
-  font-weight: normal;
+  font-size: 14px;
   height: 300px;
-  line-height: 150%;
+  line-height: 180%;
+  padding: $cube/3;
+
+  p {
+    margin-bottom: $cube/4;
+  }
 }
 
 text-angular {
@@ -89,6 +93,15 @@ text-angular {
         outline: none;
       }
     }
+
+    .ta-bind {
+      b { font-weight: bold; }
+      i { font-style: italic; }
+
+      h1, h2, h3, h4, h5, h6 {
+        margin-top: $cube * (4/5);
+      }
+    }
   }
 
   .ta-toolbar, .popover {
@@ -102,13 +115,14 @@ text-angular {
 
     button {
       background: none;
-      color: $lightgrey;
+      color: $grey;
       padding: $cube/5 $cube/4;
       text-align: center;
       height: auto;
       font-weight: normal;
-      font-size: 0.8em;
+      font-size: 12px;
       margin: 0;
+      border: none;
 
       &:hover {
         color: $blue;
@@ -144,10 +158,8 @@ text-angular {
   }
 }
 
-label, legend {
-  font-weight: normal;
+label {
   text-transform: uppercase;
-  padding: 0 $cube/5;
-  display: block;
-  color: $lightblue;
+  font-size: $font-size-h6;
+  font-weight: normal;
 }
